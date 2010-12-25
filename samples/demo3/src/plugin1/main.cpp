@@ -3,5 +3,5 @@
 
 void plugin1(void)
 {
-	printf("LeraBuild Hello From Plugin 1 Static Library called from Plugin 2\n");
+	printf("RakeBuild Hello From Plugin 1 Static Library called from Plugin 2\n");
 }

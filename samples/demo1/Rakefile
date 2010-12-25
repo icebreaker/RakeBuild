@@ -1,5 +1,5 @@
 #
-#	LeraBuild 'Rakefile'
+#	RakeBuild 'Rakefile'
 #
 #	Copyright (c) 2010, Mihail Szabolcs
 #	All rights reserved.
@@ -16,7 +16,7 @@
 #		the documentation and/or other materials provided with the
 #		distribution.
 #
-#	* 	Neither the name of the LeraBuild nor the names of its contributors
+#	* 	Neither the name of the RakeBuild nor the names of its contributors
 #		may be used to endorse or promote products derived from this
 #		software without specific prior written permission.
 #
@@ -102,13 +102,13 @@ if File.exists?(CONFIG_FILE)
 	CONFIG_STATIC 	= CONFIG_APP.merge(DEFAULT_CONFIG_STATIC.merge(config))
 	CONFIG_SHARED 	= CONFIG_APP.merge(DEFAULT_CONFIG_SHARED.merge(config))
 	 
-	log("LeraBuild configuration loaded")
+	log("RakeBuild configuration loaded")
 else
 	CONFIG_APP 		= DEFAULT_CONFIG_APP
 	CONFIG_STATIC	= CONFIG_APP.merge(DEFAULT_CONFIG_STATIC)
 	CONFIG_SHARED	= CONFIG_APP.merge(DEFAULT_CONFIG_SHARED)
 	
-	log("LeraBuild using default configuration")
+	log("RakeBuild using default configuration")
 end
 
 #
@@ -134,7 +134,7 @@ end
 
 #
 # Function: LoadProject
-#	Load a LeraBuild Project in YAML format.
+#	Load a RakeBuild Project in YAML format.
 #
 # Paramaters:
 #	proj 	- absolute project file path
@@ -153,7 +153,7 @@ def LoadProject(proj)
 end
 #
 # Function: IsDebugProject
-#	Tells whatever a LeraBuild Project is debug or not.
+#	Tells whatever a RakeBuild Project is debug or not.
 #
 # Paramaters:
 #	proj 	- absolute project file path
@@ -166,7 +166,7 @@ def IsDebugProject(proj)
 end
 #
 # Function: ProcessProjectDependencies
-#	Process a LeraBuild Project's dependencies returning linker flags
+#	Process a RakeBuild Project's dependencies returning linker flags
 #
 # Paramaters:
 #	source 	- absolute top level source directory
@@ -216,7 +216,7 @@ def ProcessProjectDependencies(source, build, dep, debug)
 end
 #
 # Function: ProcessProject
-#	Process a LeraBuild Project in YAML format.
+#	Process a RakeBuild Project in YAML format.
 #
 # Paramaters:
 #	source 	- absolute top level source directory
@@ -228,7 +228,7 @@ end
 #
 def ProcessProject(source, build, proj)
 
-	# Load LeraBuild Project
+	# Load RakeBuild Project
 	_config = LoadProject(proj);
 
 	# Failed ...
@@ -434,17 +434,17 @@ CONFIG_APP['dir'].each do |dirs|
 		# Absolute build directory
 		build_dir = "#{CWD}/#{build}"
 
-		log('LeraBuild Loading Release Projects')
+		log('RakeBuild Loading Release Projects')
 		# Build Release Namespace
 		namespace 'Release' do
 			release_tasks = ScanProjects(src_dir, build_dir)			
 		end
-		log('LeraBuild Loading Debug Projects')
+		log('RakeBuild Loading Debug Projects')
 		# Build Debug Namespace
 		namespace 'Debug' do
 			debug_tasks = ScanProjects(src_dir, build_dir, true)
 		end
-		log('LeraBuild Projects Loaded')
+		log('RakeBuild Projects Loaded')
 	end
 end
 
@@ -461,13 +461,13 @@ end
 desc 'Build debug'
 task :debug do
 	# Finished
-	log('LeraBuild Debug Finished')
+	log('RakeBuild Debug Finished')
 end
 
 desc 'Build release'
 task :release do
 	# Finished
-	log('LeraBuild Release Finished')
+	log('RakeBuild Release Finished')
 end
 
 # Default Executes Build Release
@@ -476,5 +476,5 @@ task :default => ['release']
 # Default Task
 desc 'Build release'
 task :default do
-	log('LeraBuild Finished')
+	log('RakeBuild Finished')
 end

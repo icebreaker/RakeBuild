@@ -1,8 +1,8 @@
-# LeraBuild
+# RakeBuild
 
 By Mihail Szabolcs!
 
-LeraBuild is an *advanced* Rakefile for Rake tailored towards building modular C/C++ projects in an effective and simple manner.
+RakeBuild is an *advanced* Rakefile for Rake tailored towards building modular C/C++ projects in an effective and simple manner.
 
 # Getting Started
 
@@ -27,7 +27,7 @@ conditions are met:
 	the documentation and/or other materials provided with the
 	distribution.
 
-* Neither the name of the LeraBuild nor the names of its contributors
+* Neither the name of the RakeBuild nor the names of its contributors
 	may be used to endorse or promote products derived from this
 	software without specific prior written permission.
 

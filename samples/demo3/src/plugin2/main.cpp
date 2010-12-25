@@ -4,6 +4,6 @@
 
 void plugin2(void)
 {
-	printf("LeraBuild Hello From Plugin 2 Shared Object\n");
+	printf("RakeBuild Hello From Plugin 2 Shared Object\n");
 	plugin1();
 }
